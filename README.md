@@ -1,2 +1,2 @@
-# ConverterCSVtoRDF-SPARQL-OPENREFINE-GRAPHDB
+# CSVtoRDF-Ontorefine
 Convierte datos CSV a RDF usando OPENREFINE de GRAPHDB
