@@ -1,0 +1,469 @@
+[
+  {
+    "op": "core/column-split",
+    "description": "Split column dia_Id,Dia by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "dia_Id,Dia",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column hora_Id,Hora,dia_Id by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "hora_Id,Hora,dia_Id",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column dia_Id,Dia 1",
+    "columnName": "dia_Id,Dia 1"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column hora_Id,Hora,dia_Id 1",
+    "columnName": "hora_Id,Hora,dia_Id 1"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column dia_Id,Dia 2 to Fecha",
+    "oldColumnName": "dia_Id,Dia 2",
+    "newColumnName": "Fecha"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column hora_Id,Hora,dia_Id 2 to Hora",
+    "oldColumnName": "hora_Id,Hora,dia_Id 2",
+    "newColumnName": "Hora"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column hora_Id,Hora,dia_Id 3",
+    "columnName": "hora_Id,Hora,dia_Id 3"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 1 to DirMed_a_1100cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 1",
+    "newColumnName": "DirMed_a_1100cm"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 2 to Humedad_a_620cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 2",
+    "newColumnName": "Humedad_a_620cm"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 3 to Irradia_a_200cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 3",
+    "newColumnName": "Irradia_a_200cm"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 4 to Presion_a_150cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 4",
+    "newColumnName": "Presion_a_150cm"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 5 to SigDir_a_1100cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 5",
+    "newColumnName": "SigDir_a_1100cm"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 6 to SigVel_a_1100cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 6",
+    "newColumnName": "SigVel_a_1100cm"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 7 to TemAire_a_620cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 7",
+    "newColumnName": "TemAire_a_620cm"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 8 to VelMax_a_1100",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 8",
+    "newColumnName": "VelMax_a_1100"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 9 to VelMedia_a_1100cm",
+    "oldColumnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 9",
+    "newColumnName": "VelMedia_a_1100cm"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 10",
+    "columnName": "Dir.Med._a_1100cm,Humedad._a_620cm,Irradia.._a_200cm,Presion._a_150cm,Sig.Dir._a_1100cm,Sig.Vel._a_1100cm,Tem.Aire._a_620cm,Vel.Max._a_1100cm,Vel.Med._a_1100cm,hora_Id 10"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Fecha using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Fecha",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Hora using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Hora",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Humedad_a_620cm using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Humedad_a_620cm",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Irradia_a_200cm using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Irradia_a_200cm",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Presion_a_150cm using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Presion_a_150cm",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column SigDir_a_1100cm using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "SigDir_a_1100cm",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column SigVel_a_1100cm using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "SigVel_a_1100cm",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column TemAire_a_620cm using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "TemAire_a_620cm",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column VelMax_a_1100 using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "VelMax_a_1100",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column VelMedia_a_1100cm using expression grel:value.replace('\"','')",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "VelMedia_a_1100cm",
+    "expression": "grel:value.replace('\"','')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Humedad_a_620cm using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Humedad_a_620cm",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Irradia_a_200cm using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Irradia_a_200cm",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Presion_a_150cm using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Presion_a_150cm",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column SigDir_a_1100cm using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "SigDir_a_1100cm",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column SigVel_a_1100cm using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "SigVel_a_1100cm",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column TemAire_a_620cm using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "TemAire_a_620cm",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column VelMax_a_1100 using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "VelMax_a_1100",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column VelMedia_a_1100cm using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "VelMedia_a_1100cm",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Fecha using expression grel:cells[\"Fecha\"].value + \" \" + cells[\"Hora\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Fecha",
+    "expression": "grel:cells[\"Fecha\"].value + \" \" + cells[\"Hora\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column Fecha by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Fecha",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": " ",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Fecha 2",
+    "columnName": "Fecha 2"
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column FechaHora at index 1 based on column Fecha 1 using expression grel:value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "newColumnName": "FechaHora",
+    "columnInsertIndex": 1,
+    "baseColumnName": "Fecha 1",
+    "expression": "grel:value",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Fecha 1 to Fecha",
+    "oldColumnName": "Fecha 1",
+    "newColumnName": "Fecha"
+  },
+  {
+    "op": "core/column-move",
+    "description": "Move column FechaHora to position 0",
+    "columnName": "FechaHora",
+    "index": 0
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column FechaHora using expression grel:cells[\"Fecha\"].value + \" \" + cells[\"Hora\"].value",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "FechaHora",
+    "expression": "grel:cells[\"Fecha\"].value + \" \" + cells[\"Hora\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column FechaHora using expression grel:value.toDate()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "FechaHora",
+    "expression": "grel:value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Hora",
+    "columnName": "Hora"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Fecha using expression grel:value.replace(\"-\",\"/\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Fecha",
+    "expression": "grel:value.replace(\"-\",\"/\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]

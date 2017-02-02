@@ -1,0 +1,383 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Benceno (�g/m3) to Benceno",
+    "oldColumnName": "Benceno (�g/m3)",
+    "newColumnName": "Benceno"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column CO (mg/m3) to CO",
+    "oldColumnName": "CO (mg/m3)",
+    "newColumnName": "CO"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column CO 8h max (mg/m3) to CO8h",
+    "oldColumnName": "CO 8h max (mg/m3)",
+    "newColumnName": "CO8h"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Etilbenceno (�g/m3) to Etilbenceno",
+    "oldColumnName": "Etilbenceno (�g/m3)",
+    "newColumnName": "Etilbenceno"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column NO (�g/m3) to NO",
+    "oldColumnName": "NO (�g/m3)",
+    "newColumnName": "NO"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column NO2 (�g/m3) to NO2",
+    "oldColumnName": "NO2 (�g/m3)",
+    "newColumnName": "NO2"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column NO2 max (�g/m3) to NO2max",
+    "oldColumnName": "NO2 max (�g/m3)",
+    "newColumnName": "NO2max"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column CO 8h max - ICA to CO8hmax-ICA",
+    "oldColumnName": "CO 8h max - ICA",
+    "newColumnName": "CO8hmax-ICA"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column NOX (�g/m3) to NOX ",
+    "oldColumnName": "NOX (�g/m3)",
+    "newColumnName": "NOX "
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Ortoxileno (�g/m3) to Ortoxileno",
+    "oldColumnName": "Ortoxileno (�g/m3)",
+    "newColumnName": "Ortoxileno"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM10 (�g/m3) to PM10",
+    "oldColumnName": "PM10 (�g/m3)",
+    "newColumnName": "PM10"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM10 - ICA to PM10-ICA",
+    "oldColumnName": "PM10 - ICA",
+    "newColumnName": "PM10-ICA"
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column NO2 - ICA by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "NO2 - ICA",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "/",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column CO8hmax-ICA by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "CO8hmax-ICA",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "/",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column PM10-ICA by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "PM10-ICA",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "/",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column PM2,5 - ICA by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "PM2,5 - ICA",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "/",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column ICA Estaci�n by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "ICA Estaci�n",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "/",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM10-ICA 1 to PM10-ICA1",
+    "oldColumnName": "PM10-ICA 1",
+    "newColumnName": "PM10-ICA1"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column NO2 - ICA 1 to NO2-ICA1",
+    "oldColumnName": "NO2 - ICA 1",
+    "newColumnName": "NO2-ICA1"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column NO2 - ICA 2 to NO2-ICA2",
+    "oldColumnName": "NO2 - ICA 2",
+    "newColumnName": "NO2-ICA2"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM10-ICA 2 to PM10-ICA2",
+    "oldColumnName": "PM10-ICA 2",
+    "newColumnName": "PM10-ICA2"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM2,5 (�g/m3) to PM25",
+    "oldColumnName": "PM2,5 (�g/m3)",
+    "newColumnName": "PM25"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM2,5 - ICA 1 to PM25-ICA1",
+    "oldColumnName": "PM2,5 - ICA 1",
+    "newColumnName": "PM25-ICA1"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM2,5 - ICA 2 to PM2,5-ICA2",
+    "oldColumnName": "PM2,5 - ICA 2",
+    "newColumnName": "PM2,5-ICA2"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PM2,5-ICA2 to PM25-ICA2",
+    "oldColumnName": "PM2,5-ICA2",
+    "newColumnName": "PM25-ICA2"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Tolueno (�g/m3) to Tolueno",
+    "oldColumnName": "Tolueno (�g/m3)",
+    "newColumnName": "Tolueno"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column ICA Estaci�n 1 to ICAEstacion1",
+    "oldColumnName": "ICA Estaci�n 1",
+    "newColumnName": "ICAEstacion1"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column ICA Estaci�n 2 to ICAEstacion2",
+    "oldColumnName": "ICA Estaci�n 2",
+    "newColumnName": "ICAEstacion2"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column CO8hmax-ICA 1 to CO8hmax-ICA1",
+    "oldColumnName": "CO8hmax-ICA 1",
+    "newColumnName": "CO8hmax-ICA1"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column CO8hmax-ICA 2 to CO8hmax-ICA2",
+    "oldColumnName": "CO8hmax-ICA 2",
+    "newColumnName": "CO8hmax-ICA2"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column NO using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "NO",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column NO2 using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "NO2",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column NO2max using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "NO2max",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column NOX  using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "NOX ",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column PM10 using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "PM10",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column PM25 using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "PM25",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CO using expression grel:value.replace(\",\",\".\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "CO",
+    "expression": "grel:value.replace(\",\",\".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CO8h using expression grel:value.replace(\",\",\".\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "CO8h",
+    "expression": "grel:value.replace(\",\",\".\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CO using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "CO",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CO8h using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "CO8h",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Benceno",
+    "columnName": "Benceno"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Etilbenceno",
+    "columnName": "Etilbenceno"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Ortoxileno",
+    "columnName": "Ortoxileno"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Tolueno",
+    "columnName": "Tolueno"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column NOX  to NOX",
+    "oldColumnName": "NOX ",
+    "newColumnName": "NOX"
+  }
+]

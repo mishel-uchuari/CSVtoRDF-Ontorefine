@@ -1,0 +1,114 @@
+PREFIX estacion: <http://opendata.euskadi.eus/estacion/C040>
+PREFIX medicion: <http://opendata.euskadi.eus/medicion/C040>
+PREFIX spif: <http://spinrdf.org/spif#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> 
+PREFIX sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+INSERT{
+  GRAPH<http://opendata.euskadi.eus/graph/estacion/C040>{
+  #Parte dirMedia
+   ?uridirMedia1100 a qb:Observation; 
+   rdfs:comment ?dirMediaCommentt; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?gradoscentigrados; 
+   sdmx-measure:obsValue ?dirMedia1100. 
+   #Parte humedad620
+   ?urihumedad620 a qb:Observation; 
+   rdfs:comment ?humedadComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?porcentaje; 
+   sdmx-measure:obsValue ?humedad620. 
+  #Parte irradia200
+   ?uriirradia200 a qb:Observation; 
+   rdfs:comment ?irradiaComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?watiosm2; 
+   sdmx-measure:obsValue ?irradia200. 
+  #Parte presion150
+   ?uripresion150 a qb:Observation; 
+   rdfs:comment ?presionComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?milibar; 
+   sdmx-measure:obsValue ?presion150. 
+  #Parte sigDir1100
+    ?urisigDir1100 a qb:Observation; 
+   rdfs:comment ?dirMediaComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?gradoscentigrados; 
+   sdmx-measure:obsValue ?sigDir1100. 
+  #Parte sigVel1100
+    ?urisigVel1100 a qb:Observation; 
+   rdfs:comment ?sigVelComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?kilometrohora; 
+   sdmx-measure:obsValue ?sigVel1100. 
+  #Parte temAire620
+    ?uritemAire620 a qb:Observation; 
+   rdfs:comment ?temAireComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?gradoscentigrados; 
+   sdmx-measure:obsValue ?temAire620. 
+  #Parte velMax1100
+    ?urivelMax1100 a qb:Observation; 
+   rdfs:comment ?velMaxComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?kilometrohora; 
+   sdmx-measure:obsValue ?velMax1100. 
+  #Parte velMedia1100
+    ?urivelMedia1100 a qb:Observation; 
+   rdfs:comment ?velMediaComment; 
+   dct:date ?fechaParseada; 
+   sdmx-attribute:unitMeasure ?kilometrohora; 
+   sdmx-measure:obsValue ?velMedia1100. 
+  }
+}
+WHERE{
+   service <http://lod.eurohelp.es:7200/rdf-bridge/1580198993402> {
+     ?numRow a <urn:Row> ;
+     <urn:col:Fecha> ?date;
+     <urn:col:FechaHora> ?dateTime;
+     <urn:col:DirMed_a_1100cm> ?dirMedia1100;        
+     <urn:col:Humedad_a_620cm> ?humedad620;
+     <urn:col:Irradia_a_200cm> ?irradia200;        
+     <urn:col:Presion_a_150cm> ?presion150;
+     <urn:col:SigDir_a_1100cm> ?sigDir1100;        
+     <urn:col:SigVel_a_1100cm> ?sigVel1100;
+     <urn:col:TemAire_a_620cm> ?temAire620;        
+     <urn:col:VelMax_a_1100> ?velMax1100;        
+     <urn:col:VelMedia_a_1100cm> ?velMedia1100.
+  }
+bind(spif:parseDate(?date, "yyyy/MM/dd") as ?fechaParseada)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?uridirMedia1100)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/humedad620" )) as ?urihumedad620)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?uriirradia200)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?uripresion150)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?urisigDir1100)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?urisigVel1100)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?uritemAire620)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?urivelMax1100)
+bind(iri(concat("http://opendata.euskadi.eus/medicion/C040", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?urivelMedia1100)
+
+   #Comentarios elementos  
+bind(STRLANG("Dirección o procedencia media del viento expresada en grados","es") as ?dirMediaComment)
+bind(STRLANG("Sigma de la dirección del viento expresada en grados","es") as ?sigDirComment)
+bind(STRLANG("Humedad relativa del aire expresada en porcentaje","es") as ?humedadComment)
+bind(STRLANG("Irradiancia global sobre una superficie plana expresada en watios por metro2","es") as ?irradiaComment)
+bind(STRLANG("Presión atmosférica expresada en milibares","es") as ?presionComment)
+bind(STRLANG("Sigma de la velocidad del viento expresada en kilómetros por hora","es") as ?sigVelComment)
+bind(STRLANG("Temperatura del aire expresada en grados centígrados","es") as ?temAireComment)
+bind(STRLANG("Racha máxima del viento horizontal expresada en kilómetros por hora","es") as ?velMaxComment)
+bind(STRLANG("Velocidad media del viento expresada en kilómetros por hora","es") as ?velMediaComment)
+
+  
+bind(iri("http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#DegreeCelsius") as ?gradoscentigrados)
+bind(iri("http://dbpedia.org/ontology/percentage") as ?porcentaje)
+bind(iri("http://purl.org/iot/vocab/m3-lite#WattPerMeterSquare") as ?watiosm2)
+bind(iri("http://purl.org/iot/vocab/m3-lite#Millibar") as ?milibar)
+bind(iri("http://purl.org/iot/vocab/m3-lite#KilometerPerHour") as ?kilometrohora)
+
+
+                
+}
