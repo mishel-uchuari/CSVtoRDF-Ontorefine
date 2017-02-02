@@ -1,0 +1,4 @@
+select * where { 
+    graph<http://opendata.euskadi.eus/graph/AV-GASTEIZ>{
+    ?s ?p ?o .}
+}

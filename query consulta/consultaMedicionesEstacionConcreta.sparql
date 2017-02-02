@@ -1,0 +1,8 @@
+#Mediciones que se han realizado en la estacion C040 (Vitoria Gazteiz)
+
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT *
+WHERE {
+?s geo:location <http://opendata.euskadi.eus/graph/estacion/C040>
+}
+

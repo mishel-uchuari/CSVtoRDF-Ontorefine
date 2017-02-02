@@ -1,0 +1,16 @@
+#La mayor medición en microgramos en la estación de Vitoria Gazteiz
+#Pensar en una uri que permita coger el bloque de NOX completo y hacer la consulta sobre el 
+#en vez de los microgramos
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX measure:<http://purl.org/linked-data/sdmx/2009/measure#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+select *
+where{
+?s measure:obsValue ?q. 
+?s attribute:unitMeasure <http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3>.  
+?s geo:location <http://opendata.euskadi.eus/graph/estacion/C040>
+}
+ORDER BY DESC(?q) limit 1
+
