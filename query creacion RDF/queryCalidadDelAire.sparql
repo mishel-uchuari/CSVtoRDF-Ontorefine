@@ -10,8 +10,8 @@ PREFIX sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#>
 PREFIX medicion: <http://opendata.euskadi.eus/medicion/AV-GASTEIZ/>
 
 INSERT{
-  GRAPH <http://opendata.euskadi.eus/graph/AV-GASTEIZ> {
-  #Parte CO
+    GRAPH <http://opendata.euskadi.eus/graph/calidadDelAire> {
+    #Parte CO
   ?uriCO a qb:Observation;
   rdfs:comment ?COComment;
   dct:date ?fechaParseada;
@@ -126,22 +126,21 @@ INSERT{
         <urn:col:ICAEstacion1> ?ICAEstacion1;
         <urn:col:ICAEstacion2> ?ICAEstacion2.
 }
-	#FechaParseada
+#URIS elementos
   bind(spif:parseDate(?date, "dd/MM/yyyy") as ?fechaParseada)
-	#URIS elementos
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/CO" )) as ?uriCO)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/CO8h" )) as ?uriCO8h)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/CO8hAirQuality" )) as ?uriCO8hAirQuality)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/NO" )) as ?uriNO)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/NO2" )) as ?uriNO2)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/NO2max" )) as ?uriNO2max)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/NO2AirQuality" )) as ?uriNO2AirQuality)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/NOX" )) as ?uriNOX)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/PM10" )) as ?uriPM10)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/PM10AirQuality" )) as ?uriPM10AirQuality)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/PM25" )) as ?uriPM25)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/PM25AirQuality" )) as ?uriPM25AirQuality)
-  bind(iri(concat("http://opendata.euskadi.eus/estacion/AV-GASTEIZ/", spif:encodeURL(?fechaParseada), "/ICAEstacion" )) as ?uriICAEstacion)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/CO" )) as ?uriCO)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/CO8h" )) as ?uriCO8h)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseadaa), "/CO8hAirQuality" )) as ?uriCO8hAirQuality)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO" )) as ?uriNO)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO2" )) as ?uriNO2)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO2max" )) as ?uriNO2max)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO2AirQuality" )) as ?uriNO2AirQuality)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NOX" )) as ?uriNOX)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseadaa), "/PM10" )) as ?uriPM10)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/PM10AirQuality" )) as ?uriPM10AirQuality)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/PM25" )) as ?uriPM25)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/PM25AirQuality" )) as ?uriPM25AirQuality)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/ICAEstacion" )) as ?uriICAEstacion)
   #Valores Calidad del aire
   bind(STRLANG(?PM25AirQuality1,"es") as ?PM25AirQualityEsp)
   bind(STRLANG(?PM25AirQuality2,"eu") as ?PM25AirQualityEusk)
@@ -160,24 +159,24 @@ INSERT{
 
 
   #Comentarios elementos
-  bind(STRLANG("The value of CO in a determinate date","en") as ?COComment)
-  bind(STRLANG("The value of CO8h in a determinate date","en") as ?CO8hComment)
-  bind(STRLANG("CO Air Quality in a determinate date","en") as ?C8hAQComment)
-  bind(STRLANG("The value of NO in a determinate date","en") as ?NOComment)
-  bind(STRLANG("The value of NO2 in a determinate date","en") as ?NO2Comment)
-  bind(STRLANG("The maximum value of NO2 in a determinate date","en") as ?NO2maxComment)
-  bind(STRLANG("NO2 Air Quality in a determinate date","en") as ?NO2AQComment)
-  bind(STRLANG("The value of NOX in a determinate date","en") as ?NOXComment)
-  bind(STRLANG("The value of PM10 in a determinate date","en") as ?PM10Comment)
-  bind(STRLANG("PM10 Air Quality in a determinate date","en") as ?PM10AQComment)
-  bind(STRLANG("The value of PM25 in a determinate date","en") as ?PM25Comment)
-  bind(STRLANG("PM25 Air Quality in a determinate date","en") as ?PM25AQComment)
-  bind(STRLANG("ICA Estacion Air Quality in a determinate date","en") as ?ICAEstacionAQComment)
+  bind(STRLANG("El valor de CO en una fecha determinada","es") as ?COComment)
+  bind(STRLANG("El valor de CO8h en una fecha determinada","es") as ?CO8hComment)
+  bind(STRLANG("La calidad del aire de CO en una fecha determinada","es") as ?C8hAQComment)
+  bind(STRLANG("El valor de NO en una fecha determinada","es") as ?NOComment)
+  bind(STRLANG("El valor de NO2 en una fecha determinada","es") as ?NO2Comment)
+  bind(STRLANG("El valor maximo de NO2 en una fecha determinada","es") as ?NO2maxComment)
+  bind(STRLANG("La calidad del aire de NO2 en una fecha determinada","es") as ?NO2AQComment)
+  bind(STRLANG("El valor de NOX en una fecha determinada","es") as ?NOXComment)
+  bind(STRLANG("El valor de PM10 en una fecha determinada","es") as ?PM10Comment)
+  bind(STRLANG("La calidad del aire de PM10 en una fecha determinada","es") as ?PM10AQComment)
+  bind(STRLANG("El valor de PM2.5 en una fecha determinada","es") as ?PM25Comment)
+  bind(STRLANG("La calidad del aire de PM 2.5 en una fecha determinada","es") as ?PM25AQComment)
+  bind(STRLANG("La calidad del aire de ICA Estacion en una fecha determinada","es") as ?ICAEstacionAQComment)
   
   #URIS
   bind(iri("http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3") as ?gmcubico)
   bind(iri("http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3") as ?umcubico)
  
-  bind(iri("http://opendata.euskadi.eus/graph/estacion/C040") as ?nomEst)
+  bind(iri("http://opendata.euskadi.eus/estacion/C040") as ?nomEst)
 
 }

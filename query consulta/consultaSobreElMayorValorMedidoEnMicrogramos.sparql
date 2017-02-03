@@ -8,9 +8,9 @@ PREFIX measure:<http://purl.org/linked-data/sdmx/2009/measure#>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 select *
 where{
-?s measure:obsValue ?q. 
-?s attribute:unitMeasure <http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3>.  
-?s geo:location <http://opendata.euskadi.eus/graph/estacion/C040>
+?medicion measure:obsValue ?valorMedicion. 
+?medicion attribute:unitMeasure <http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3>.  
+?medicion geo:location <http://opendata.euskadi.eus/estacion/C040>
 }
 ORDER BY DESC(?q) limit 1
 

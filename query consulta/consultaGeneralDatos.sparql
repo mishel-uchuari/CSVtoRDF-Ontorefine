@@ -1,0 +1,5 @@
+#Consulta general de los datos
+select * where { 
+    graph<http://opendata.euskadi.eus/graph/calidadDelAire>{
+    ?s ?p ?o .}
+}
