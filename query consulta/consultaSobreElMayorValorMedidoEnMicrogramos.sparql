@@ -12,5 +12,4 @@ where{
 ?medicion attribute:unitMeasure <http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3>.  
 ?medicion geo:location <http://opendata.euskadi.eus/estacion/C040>
 }
-ORDER BY DESC(?q) limit 1
-
+ORDER BY DESC(?valorMedicion) limit 1
