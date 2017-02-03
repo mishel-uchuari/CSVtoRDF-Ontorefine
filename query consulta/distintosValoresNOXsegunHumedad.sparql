@@ -1,11 +1,12 @@
-#Los distintos valores de NOX cuando la humedad es mayor a 91.9
+#Los distintos valores de NOX cuando la humedad es mayor a 91.9 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX measure: <http://purl.org/linked-data/sdmx/2009/measure#>
-select distinct ?NOX ?valorNOX ?valorHumedad
+select distinct ?NOX ?fecha ?valorNOX  
 where {
 ?NOX measure:obsValue ?valorNOX.
 <http://opendata.euskadi.eus/C040/medicion/2016-08-01/humedad620>  measure:obsValue ?valorHumedad.
+?NOX <http://purl.org/dc/terms/date> ?fecha
 FILTER ( ?valorHumedad > (xsd:double (91.9)))
 FILTER (regex(str(?NOX),"NOX"))
-
 }
+ORDER BY(?valorNOX)
