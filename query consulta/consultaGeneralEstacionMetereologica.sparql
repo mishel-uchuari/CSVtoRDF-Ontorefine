@@ -1,5 +1,0 @@
-
-select * where { 
-    graph<http://opendata.euskadi.eus/graph/estacion/C040>{
-    ?s ?p ?o .}
-}

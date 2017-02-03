@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX measure: <http://purl.org/linked-data/sdmx/2009/measure#>
 SELECT *
 WHERE {
-        <http://opendata.euskadi.eus/estacion/AV-GASTEIZ/2017-01-26/NO> geo:location ?p. 
-        <http://opendata.euskadi.eus/estacion/AV-GASTEIZ/2017-01-26/NO> dcterms:date ?s.
-        <http://opendata.euskadi.eus/estacion/AV-GASTEIZ/2017-01-26/NO> measure:obsValue ?o 
+        <http://opendata.euskadi.eus/AV-GASTEIZ/medicion/2017-01-26/NO> geo:location ?p. 
+        <http://opendata.euskadi.eus/AV-GASTEIZ/medicion/2017-01-26/NO> dcterms:date ?s.
+        <http://opendata.euskadi.eus/AV-GASTEIZ/medicion/2017-01-26/NO> measure:obsValue ?o 
 
 }

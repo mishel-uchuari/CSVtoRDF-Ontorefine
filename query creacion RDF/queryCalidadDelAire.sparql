@@ -10,8 +10,8 @@ PREFIX sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#>
 PREFIX medicion: <http://opendata.euskadi.eus/medicion/AV-GASTEIZ/>
 
 INSERT{
-  GRAPH <http://opendata.euskadi.eus/graph/calidadDelAire> {
-  #Parte CO
+    GRAPH <http://opendata.euskadi.eus/graph/calidadDelAire> {
+    #Parte CO
   ?uriCO a qb:Observation;
   rdfs:comment ?COComment;
   dct:date ?fechaParseada;
@@ -126,18 +126,17 @@ INSERT{
         <urn:col:ICAEstacion1> ?ICAEstacion1;
         <urn:col:ICAEstacion2> ?ICAEstacion2.
 }
-	#FechaParseada
+#URIS elementos
   bind(spif:parseDate(?date, "dd/MM/yyyy") as ?fechaParseada)
-	#URIS elementos
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/CO" )) as ?uriCO)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/CO8h" )) as ?uriCO8h)
-  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/CO8hAirQuality" )) as ?uriCO8hAirQuality)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseadaa), "/CO8hAirQuality" )) as ?uriCO8hAirQuality)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO" )) as ?uriNO)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO2" )) as ?uriNO2)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO2max" )) as ?uriNO2max)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NO2AirQuality" )) as ?uriNO2AirQuality)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/NOX" )) as ?uriNOX)
-  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/PM10" )) as ?uriPM10)
+  bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseadaa), "/PM10" )) as ?uriPM10)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/PM10AirQuality" )) as ?uriPM10AirQuality)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/PM25" )) as ?uriPM25)
   bind(iri(concat("http://opendata.euskadi.eus/AV-GASTEIZ/medicion/", spif:encodeURL(?fechaParseada), "/PM25AirQuality" )) as ?uriPM25AirQuality)

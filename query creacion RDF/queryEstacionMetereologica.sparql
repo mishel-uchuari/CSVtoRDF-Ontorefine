@@ -92,15 +92,15 @@ WHERE{
      <urn:col:VelMedia_a_1100cm> ?velMedia1100.
   }
 bind(spif:parseDate(?date, "yyyy/MM/dd") as ?fechaParseada)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?uridirMedia1100)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/humedad620" )) as ?urihumedad620)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/irradia200" )) as ?uriirradia200)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/presion150" )) as ?uripresion150)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/sigDir1100" )) as ?urisigDir1100)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/sigVel1100" )) as ?urisigVel1100)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/temAire610" )) as ?uritemAire620)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/velMax1100" )) as ?urivelMax1100)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/C040/", spif:encodeURL(?fechaParseada), "/velMedia1100" )) as ?urivelMedia1100)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/direccionMedia1100" )) as ?uridirMedia1100)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/humedad620" )) as ?urihumedad620)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/irradia200" )) as ?uriirradia200)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/presion150" )) as ?uripresion150)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/sigDir1100" )) as ?urisigDir1100)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/sigVel1100" )) as ?urisigVel1100)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/temAire610" )) as ?uritemAire620)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/velMax1100" )) as ?urivelMax1100)
+bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/velMedia1100" )) as ?urivelMedia1100)
 
    #Comentarios elementos  
 bind(STRLANG("Dirección o procedencia media del viento expresada en grados","es") as ?dirMediaComment)
