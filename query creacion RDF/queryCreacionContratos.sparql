@@ -1,0 +1,60 @@
+PREFIX spif: <http://spinrdf.org/spif#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+
+INSERT{
+graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
+ ?uriGeneral a ?contrato;
+ ?tipoContrato ?uriContrato;
+ dct:date ?fechaParseada;
+ ?uriDescriptionGen ?uriDescription;
+ ?uriEstadoContratoGen ?uriEstadoContrato;
+ ?urientidadImpulsoraGen ?uriEntidadImpulsora;
+ ?uriTipoContratoGen ?uriContrato;
+ ?uriAdjudicatarioGen ?uriAdjudicatario;
+ ?uriImporteAdjudicatarioGen ?importeDeAdjudicacion.
+  }  
+}WHERE{
+   service <http://lod.eurohelp.es:7200/rdf-bridge/1788527188456> {
+     ?numRow a <urn:Row>;
+     <urn:col:EstadoDeContrato> ?estadoDeContrato;
+     <urn:col:PoderAdjudicador> ?poderAdjudicador;
+     <urn:col:EntidadImpulsora> ?entidadImpulsora;
+     <urn:col:CodigoDeContrato> ?codigoContrato;
+     <urn:col:Titulo> ?titulo;
+     <urn:col:TipoDeContrato> ?tipoContrato;
+     <urn:col:Adjudicatario> ?adjudicatario;
+     <urn:col:ImporteDeAdjudicacionConIVA> ?importeDeAdjudicacion;        
+     <urn:col:FechaDeFormalizacion> ?fechaFormalizacion;
+  }
+  
+  #Uri fecha
+  bind(spif:parseDate(?fechaFormalizacion, "dd/MM/yyyy") as ?fechaParseada)
+  #Uris contratos
+  bind(iri("http://purl.org/cerif/frapo/EmploymentContract") as ?contrato)
+  bind(iri(concat("http://opendata.euskadi.eus/contratosSectorPublico/", spif:encodeURL(?tipoContrato), "/", spif:encodeURL(?adjudicatario), "/",  ?fechaParseada )) as ?uriGeneral)
+
+  bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/estadoDelContrato") as ?uriEstadoContratoGen)
+  bind(STRLANG(?estadoDeContrato,"es") as ?uriEstadoContrato)
+  
+  bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/poderAdjudicador") as ?uriPoderAdjudicadorGen)
+  bind(STRLANG(?poderAdjudicador,"es") as ?uriPoderAdjudicador)
+  
+  bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/entidadImpulsora") as ?urientidadImpulsoraGen)
+  bind(STRLANG(?entidadImpulsora,"es") as ?uriEntidadImpulsora)
+  
+  bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/codigoContrato") as ?uricodigoContratoGen)
+  bind(STRLANG(?codigoContrato,"es") as ?uriCodContrato)
+
+  bind(iri("http://purl.org/dc/terms/description") as ?uriDescriptionGen)
+  bind(STRLANG(?titulo,"es") as ?uriDescription)
+  
+  bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/tipoContrato") as ?uriTipoContratoGen)
+  bind(iri(concat("http://opendata.euskadi.eus/contrato/", spif:encodeURL(?tipoContrato))) as ?uriContrato)
+
+  bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/adjudicatario") as ?uriAdjudicatarioGen)
+  bind(STRLANG(?adjudicatario,"es") as ?uriCodContrato)
+
+  bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/importeAdjudicatario") as ?uriImporteAdjudicatarioGen)
+  
+    }

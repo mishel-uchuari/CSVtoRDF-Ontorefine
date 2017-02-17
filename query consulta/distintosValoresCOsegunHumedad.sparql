@@ -4,7 +4,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT ?medicionCO ?fechaMedicion ?valorCO
 WHERE{
-    
     ?t rdf:type <http://opendata.euskadi.eus/C040/medicion/humedad620>.
     ?t measure:obsValue ?valorHumedad.
     ?p <http://purl.org/dc/terms/date> ?fechaMedicion.

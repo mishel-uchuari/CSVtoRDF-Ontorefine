@@ -1,4 +1,4 @@
-#La estacion donde se realizó, la fecha y el valor obtenido de la medición de CO
+#La estacion donde se realizó, la fecha y el valor obtenido de una medición de CO
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -6,7 +6,7 @@ PREFIX measure: <http://purl.org/linked-data/sdmx/2009/measure#>
 SELECT ?estacion ?fecha ?valor
 WHERE {
     ?r <http://opendata.euskadi.eus/calidadDelAire/medicion/> <http://opendata.euskadi.eus/medicion/2017-01-04/CO>.
-     ?r geo:location ?estacion.
-       ?r dcterms:date ?fecha.
-        <http://opendata.euskadi.eus/medicion/2017-01-04/CO> measure:obsValue ?valor .
+    ?r geo:location ?estacion.
+    ?r dcterms:date ?fecha.
+    <http://opendata.euskadi.eus/medicion/2017-01-04/CO> measure:obsValue ?valor .
 }
