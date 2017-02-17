@@ -168,8 +168,6 @@ bind(iri(concat("http://opendata.euskadi.eus/medicion//ICAEstacion" )) as ?uriIC
   
   bind(STRLANG(?ICAEstacion1,"es") as ?ICAEstacionEsp)
   bind(STRLANG(?ICAEstacion2,"eu") as ?ICAEstacionEusk)
-
-  
     #Nombre de la medicion
   bind(iri(concat("http://opendata.euskadi.eus/calidadDelAire/AV-GASTEIZ/", spif:encodeURL(?fechaParseada) )) as ?uriEstacion)
   #Uri medicion
@@ -189,8 +187,6 @@ bind(iri(concat("http://opendata.euskadi.eus/medicion//ICAEstacion" )) as ?uriIC
   bind(STRLANG("El valor de PM25 en una fecha determinada","es") as ?PM25Comment)
   bind(STRLANG("La calidad del aire PM25 en una fecha determinada","es") as ?PM25AQComment)
   bind(STRLANG("La calidad del aire ICA Estacion en una fecha determinada","es") as ?ICAEstacionAQComment)
-  
-
   
   #URIS
   bind(iri("http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3") as ?gmcubico)
