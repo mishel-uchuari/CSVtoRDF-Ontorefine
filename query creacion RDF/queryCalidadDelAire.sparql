@@ -110,7 +110,7 @@ INSERT{
         <urn:col:NO2> ?NO2;
         <urn:col:NO2max> ?NO2max ;
         <urn:col:NO2-ICA1> ?NO2AirQuality1;
-  		<urn:col:NO2-ICA2> ?NO2AirQuality2;
+  	<urn:col:NO2-ICA2> ?NO2AirQuality2;
         <urn:col:NOX> ?NOX ;
         <urn:col:PM10> ?PM10;
         <urn:col:PM10-ICA1> ?PM10AirQuality1;
