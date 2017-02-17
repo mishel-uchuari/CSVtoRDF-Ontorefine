@@ -1,0 +1,67 @@
+PREFIX spif: <http://spinrdf.org/spif#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+
+INSERT{
+  graph<http://opendata.euskadi.eus/graph/retribucionesNominativas>{
+  ?uriGeneral a ?uriGeneral;
+  ?uriEmpleadoPred ?NomAp;
+  ?uriPuestoTrabajoPred ?uriCargoPublico; 
+  ?uriSalarioPred ?Retribuciones;
+  ?uriFechaInRelPred ?fechaInicioRelParseada;
+  ?uriFechaFinRelPred ?fechaFinRelParseada;
+  ?uriIdDepPred ?Id_Dpto;
+  ?uriDepPred ?uriDepartamento;
+  ?uriIdOrganoPred ?Id_Organo;
+  ?uriOrganoPred ?Id_Organo;
+  ?uriCentroOrganicoPred ?Id_Centro_Organico;
+  ?uriFechaActPred  ?fechaActParseada; 
+ }		
+}WHERE{
+     service <http://lod.eurohelp.es:7200/rdf-bridge/2481831666517> {
+
+     ?numRow a <urn:Row> ;
+     <urn:col:NomAp> ?NomAp;
+     <urn:col:CargoPublico> ?CargoPublico;
+     <urn:col:CargoPublicoSinGuion> ?cpub;
+     <urn:col:Retribuciones> ?Retribuciones;        
+     <urn:col:FechaInicioRelacion> ?FechaInicioRelacion;
+     <urn:col:FechaFinRelacion> ?FechaFinRelacion;        
+     <urn:col:Id_Dpto> ?Id_Dpto;
+     <urn:col:Departamento> ?Departamento;  
+     <urn:col:Id_Organo> ?Id_Organo;
+     <urn:col:Organo> ?Organo;        
+     <urn:col:Id_Centro_Organico> ?Id_Centro_Organico;        
+     <urn:col:CentroOrganico> ?CentroOrganico;
+     <urn:col:FechaActualizacion> ?FechaActualizacion
+  }
+  
+  #Uri predicados
+  bind(iri("http://opendata.euskadi.eus/employee") as ?uriEmpleadoPred)
+  bind(iri("http://opendata.euskadi.eus/cargoPublico") as ?uriCargoPublicoPred)
+  bind(iri("http://opendata.euskadi.eus/fechaInicioRelacion") as ?uriFechaInRelPred)
+  bind(iri("http://opendata.euskadi.eus/fechaFinRelacion") as ?uriFechaFinRelPred)
+  bind(iri("http://opendata.euskadi.eus/fechaActualizacion") as ?uriFechaActPred)
+  bind(iri("http://dbpedia.org/ontology/salary") as ?uriSalarioPred)
+  bind(iri("http://dbpedia.org/ontology/OfficeHolder") as ?uriPuestoTrabajoPred)
+  bind(iri("http://contsem.unizar.es/def/sector-publico/pproc#managingDepartment") as ?uriDepPred)
+  bind(iri("http://opendata.euskadi.eus/idDepto") as ?uriIdDepPred)
+  bind(iri("http://opendata.euskadi.eus/idOrgano") as ?uriIdOrganoPred)
+  bind(iri("http://opendata.euskadi.eus/Organo") as ?uriOrganoPred)
+  bind(iri("http://opendata.euskadi.eus/idCentroOrganico") as ?uriCentroOrganicoPred)
+  
+  #Parseo de las fechas
+  bind(spif:parseDate(?FechaInicioRelacion, "dd/MM/yyyy") as ?fechaInicioRelParseada)
+  bind(spif:parseDate(?FechaFinRelacion, "dd/MM/yyyy") as ?fechaFinRelParseada)
+  bind(spif:parseDate(?FechaActualizacion, "dd/MM/yyyy") as ?fechaActParseada)
+  
+  #Formato a los datos
+  bind(STRLANG(?cpub,"es") as ?uriCargoPublico)
+  bind(STRLANG(?Organo,"es") as ?uriOrgano)
+  bind(STRLANG(?CentroOrganico,"es") as ?uriCentroOrganico)
+   #Uri general
+  bind(iri(concat("http://opendata.euskadi.eus/nomina/idCargo/", spif:encodeURL(?CargoPublico), "/dpto/", spif:encodeURL(?Departamento), "/",  ?fechaActParseada )) as ?uriGeneral)
+  #Uri departamento
+  bind(iri(concat("http://opendata.euskadi.eus/dpto/", spif:encodeURL(?Departamento))) as ?uriDepartamento)
+  
+}
