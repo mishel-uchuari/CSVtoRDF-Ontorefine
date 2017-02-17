@@ -1,0 +1,498 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Estado de contrato to EstadoDeContrato",
+    "oldColumnName": "Estado de contrato",
+    "newColumnName": "EstadoDeContrato"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Poder adjudicador to PoderAdjudicador",
+    "oldColumnName": "Poder adjudicador",
+    "newColumnName": "PoderAdjudicador"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Entidad impulsora to EntidadImpulsora",
+    "oldColumnName": "Entidad impulsora",
+    "newColumnName": "EntidadImpulsora"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column C�digo de contrato to CodigoDeContrato",
+    "oldColumnName": "C�digo de contrato",
+    "newColumnName": "CodigoDeContrato"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column T�tulo to Titulo",
+    "oldColumnName": "T�tulo",
+    "newColumnName": "Titulo"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Tipo de contrato to TipoDeContrato",
+    "oldColumnName": "Tipo de contrato",
+    "newColumnName": "TipoDeContrato"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Importe de adjudicaci�n con IVA to ImporteDeAdjudicacionConIVA",
+    "oldColumnName": "Importe de adjudicaci�n con IVA",
+    "newColumnName": "ImporteDeAdjudicacionConIVA"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Fecha de formalizaci�n to FechaDeFormalizacion",
+    "oldColumnName": "Fecha de formalizaci�n",
+    "newColumnName": "FechaDeFormalizacion"
+  },
+  {
+    "op": "core/column-move",
+    "description": "Move column FechaDeFormalizacion to position 0",
+    "columnName": "FechaDeFormalizacion",
+    "index": 0
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EstadoDeContrato using expression grel:value.replace(\"Ejecuci�n\", \"Ejecucion\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EstadoDeContrato",
+    "expression": "grel:value.replace(\"Ejecuci�n\", \"Ejecucion\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression grel:value.replace(\"Pol�tica\", \"Politica\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "grel:value.replace(\"Pol�tica\", \"Politica\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression grel:value.replace(\"P�blica\", \"Publica\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "grel:value.replace(\"P�blica\", \"Publica\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression grel:value.replace(\"Administraci�n\", \"Administracion\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "grel:value.replace(\"Administraci�n\", \"Administracion\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression grel:value.replace(\"Educaci�n\", \"Educacion\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "grel:value.replace(\"Educaci�n\", \"Educacion\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression grel:value.replace(\"Ling��stica\", \"Linguistica\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "grel:value.replace(\"Ling��stica\", \"Linguistica\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column PoderAdjudicador using expression grel:value.replace(\"Inform�tica\", \"Informatica\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "PoderAdjudicador",
+    "expression": "grel:value.replace(\"Inform�tica\", \"Informatica\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression grel:value.replace(\"Inform�tica\", \"Informatica\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "grel:value.replace(\"Inform�tica\", \"Informatica\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column TipoDeContrato using expression grel:value.replace(\"Gesti�n\", \"Gestion\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "TipoDeContrato",
+    "expression": "grel:value.replace(\"Gesti�n\", \"Gestion\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column TipoDeContrato using expression grel:value.replace(\"p�blico\", \"publico\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "TipoDeContrato",
+    "expression": "grel:value.replace(\"p�blico\", \"publico\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column TipoDeContrato using expression grel:value.replace(\" \", \"-\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "TipoDeContrato",
+    "expression": "grel:value.replace(\" \", \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column ImporteDeAdjudicacionConIVA using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "ImporteDeAdjudicacionConIVA",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"�N\",\"on\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"�N\",\"on\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"P�\",\"PU\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"P�\",\"PU\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"�A\",\"IA\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"�A\",\"IA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"T�\",\"TE\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"T�\",\"TE\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\" \",\"-\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\" \",\"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"RI�E\",\"RINE\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"RI�E\",\"RINE\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"RM�\",\"RMA\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"RM�\",\"RMA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"I�U\",\"IU\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"I�U\",\"IU\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"MAR�\",\"MARI\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"MAR�\",\"MARI\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"i�n\",\"ion\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"i�n\",\"ion\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"GR�\",\"GRA\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"GR�\",\"GRA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"�\",\"\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"�\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\" \",\"\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\" \",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\".\", \"\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\".\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\",\", \"\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\",\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression grel:value.replace(\"&\",\"y\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "grel:value.replace(\"&\",\"y\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression value.toUppercase()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EntidadImpulsora using expression grel:value.replace(\" \",\"-\")",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EntidadImpulsora",
+    "expression": "grel:value.replace(\" \",\"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column EstadoDeContrato using expression value.toUppercase()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "EstadoDeContrato",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column PoderAdjudicador using expression value.toUppercase()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "PoderAdjudicador",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column TipoDeContrato using expression value.toUppercase()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "TipoDeContrato",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Adjudicatario using expression value.toUppercase()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "Adjudicatario",
+    "expression": "value.toUppercase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]

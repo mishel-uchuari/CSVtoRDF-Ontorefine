@@ -2,14 +2,16 @@
 PREFIX measure: <http://purl.org/linked-data/sdmx/2009/measure#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX medicion: <http://opendata.euskadi.eus/medicion/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 SELECT ?medicionCO ?fechaMedicion ?valorCO
 WHERE{
-    ?t rdf:type <http://opendata.euskadi.eus/C040/medicion/humedad620>.
-    ?t measure:obsValue ?valorHumedad.
-    ?p <http://purl.org/dc/terms/date> ?fechaMedicion.
-    ?p ?q ?medicionCO.
+    ?medicionesEstacion rdf:type medicion:humedad620.
+    ?medicionesEstacion measure:obsValue ?valorHumedad.
+    ?medicionesAvGasteiz dcterms:date ?fechaMedicion.
+    ?medicionesAvGasteiz <http://opendata.euskadi.eus/calidadDelAire/medicion/> ?medicionCO.
     ?medicionCO measure:obsValue ?valorCO.
-    ?medicionCO ?o <http://opendata.euskadi.eus/medicion/CO>.
+    ?medicionCO rdf:type medicion:CO.
 FILTER ( ?valorHumedad > (xsd:double (91.9)))
 }
 ORDER BY DESC(?valorCO)
