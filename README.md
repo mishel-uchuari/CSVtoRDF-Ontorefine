@@ -1,2 +1,2 @@
 # CSVtoRDF-Ontorefine
-Convierte datos CSV a RDF usando OPENREFINE de GRAPHDB
+Convierte datos CSV a RDF usando ONTOREFINE de GRAPHDB
