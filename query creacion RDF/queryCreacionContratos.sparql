@@ -2,10 +2,8 @@ PREFIX spif: <http://spinrdf.org/spif#>
 PREFIX dct: <http://purl.org/dc/terms/>
 
 
-INSERT{
-graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
+CONSTRUCT{
  ?uriGeneral a ?contrato;
- ?tipoContrato ?uriContrato;
  dct:date ?fechaParseada;
  ?uriDescriptionGen ?uriDescription;
  ?uriEstadoContratoGen ?uriEstadoContrato;
@@ -13,7 +11,6 @@ graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
  ?uriTipoContratoGen ?uriContrato;
  ?uriAdjudicatarioGen ?uriAdjudicatario;
  ?uriImporteAdjudicatarioGen ?importeDeAdjudicacion.
-  }  
 }WHERE{
    service <http://lod.eurohelp.es:7200/rdf-bridge/1788527188456> {
      ?numRow a <urn:Row>;
@@ -41,7 +38,7 @@ graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
   bind(STRLANG(?poderAdjudicador,"es") as ?uriPoderAdjudicador)
   
   bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/entidadImpulsora") as ?urientidadImpulsoraGen)
-  bind(STRLANG(?entidadImpulsora,"es") as ?uriEntidadImpulsora)
+  bind(iri(concat("http://opendata.euskadi.eus/dpto/", spif:encodeURL(?entidadImpulsora))) as ?uriDepartamento)
   
   bind(iri("http://opendata.euskadi.eus/contratosSectorPublico/codigoContrato") as ?uricodigoContratoGen)
   bind(STRLANG(?codigoContrato,"es") as ?uriCodContrato)
