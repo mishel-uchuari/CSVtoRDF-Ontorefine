@@ -121,7 +121,7 @@ bind(STRLANG("Velocidad media del viento expresada en kilómetros por hora","es"
   #Nombre de la medicion
   bind(iri(concat("http://opendata.euskadi.eus/calidadDelAire/C040/", spif:encodeURL(?fechaParseada) )) as ?uriEstacion)
   #Uri medicion
-  bind(iri(concat("http://opendata.euskadi.eus/calidadDelAire/medicion/" )) as ?uriMedicion)
+  bind(iri(concat("http://opendata.euskadi.eus/calidadDelAire/medicion" )) as ?uriMedicion)
   
   #Uris unidades de medida
 bind(iri("http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#DegreeCelsius") as ?gradoscentigrados)
