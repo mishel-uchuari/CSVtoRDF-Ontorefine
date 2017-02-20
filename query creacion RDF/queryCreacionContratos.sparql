@@ -3,15 +3,17 @@ PREFIX dct: <http://purl.org/dc/terms/>
 
 
 INSERT{
- GRAPH<GRAPH<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
+graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
  ?uriGeneral a ?contrato;
+ ?tipoContrato ?uriContrato;
  dct:date ?fechaParseada;
  ?uriDescriptionGen ?uriDescription;
  ?uriEstadoContratoGen ?uriEstadoContrato;
- ?urientidadImpulsoraGen ?uriEntidadImpulsora;
+ ?urientidadImpulsoraGen ?uriDepartamento;
  ?uriTipoContratoGen ?uriContrato;
  ?uriAdjudicatarioGen ?uriAdjudicatario;
- ?uriImporteAdjudicatarioGen ?importeDeAdjudicacion.}
+ ?uriImporteAdjudicatarioGen ?importeDeAdjudicacion.
+  }  
 }WHERE{
    service <http://lod.eurohelp.es:7200/rdf-bridge/1788527188456> {
      ?numRow a <urn:Row>;
