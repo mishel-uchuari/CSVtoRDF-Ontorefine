@@ -46,7 +46,7 @@ INSERT{
    sdmx-measure:obsValue ?presion150. 
    #Parte sigDir1100
    ?urisigDir1100 a ?urisigDir1100gen; 
-   rdfs:comment ?dirMediaComment; 
+   rdfs:comment ?sigDirComment; 
    sdmx-attribute:unitMeasure ?gradoscentigrados; 
    sdmx-measure:obsValue ?sigDir1100. 
    #Parte sigVel1100

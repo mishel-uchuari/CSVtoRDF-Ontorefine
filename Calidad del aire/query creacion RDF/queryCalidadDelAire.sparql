@@ -28,9 +28,7 @@ INSERT{
   ?uriMedicion ?uriPM10AirQuality;
   ?uriMedicion ?uriPM25;
   ?uriMedicion ?uriPM25AirQuality;
-  ?uriMedicion ?uriICAEstacion.
-
-    
+  ?uriMedicion ?uriICAEstacion.    
     
   #Parte CO
   ?uriCO a ?uriCOgen;
@@ -192,6 +190,6 @@ bind(iri(concat("http://opendata.euskadi.eus/medicion//ICAEstacion" )) as ?uriIC
   bind(iri("http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3") as ?gmcubico)
   bind(iri("http://dd.eionet.europa.eu/vocabulary/uom/concentration/ug.m-3") as ?umcubico)
  
-  bind(iri("http://opendata.euskadi.eus/graph/estacion/C040") as ?nomEst)
+  bind(iri("http://opendata.euskadi.eus/estacion/C040") as ?nomEst)
 
 }
