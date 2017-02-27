@@ -11,7 +11,7 @@ PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 INSERT{
     graph<http://opendata.euskadi.eus/graph/calidadDelAire>{
   #Uniones iniciales 
-  ?uriEstacion a qb:Observation;
+  ?uriGeneral a qb:Observation;
   dct:date ?fechaParseada;
   geo:location ?nomEst;
   ?uriMedicion ?uridirMedia1100;
@@ -26,7 +26,7 @@ INSERT{
   
    #Parte dirMedia
    ?uridirMedia1100 a ?uridirMedia1100gen; 
-   rdfs:comment ?dirMediaCommentt; 
+   rdfs:comment ?dirMediaComment; 
    sdmx-attribute:unitMeasure ?gradoscentigrados; 
    sdmx-measure:obsValue ?dirMedia1100.
    #Parte humedad620
@@ -68,7 +68,7 @@ INSERT{
    ?urivelMedia1100 a ?urivelMedia1100gen; 
    rdfs:comment ?velMediaComment; 
    sdmx-attribute:unitMeasure ?kilometrohora; 
-   sdmx-measure:obsValue ?velMedia1100.}		
+      sdmx-measure:obsValue ?velMedia1100.		}
 }WHERE{
    service <http://lod.eurohelp.es:7200/rdf-bridge/2396990285572> {
      ?numRow a <urn:Row> ;
@@ -86,26 +86,26 @@ INSERT{
      <urn:col:VelMedia_a_1100cm> ?velMedia1100.
   }
 bind(spif:parseDate(?date, "yyyy/MM/dd") as ?fechaParseada)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/", spif:encodeURL(?hora), "/direccionMedia1100" )) as ?uridirMedia1100)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada), "/", spif:encodeURL(?hora), "/humedad620" )) as ?urihumedad620)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada),"/", spif:encodeURL(?hora), "/irradia200" )) as ?uriirradia200)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada),"/", spif:encodeURL(?hora), "/presion150" )) as ?uripresion150)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada),"/", spif:encodeURL(?hora), "/sigDir1100" )) as ?urisigDir1100)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada),"/", spif:encodeURL(?hora), "/sigVel1100" )) as ?urisigVel1100)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada),"/", spif:encodeURL(?hora), "/temAire610" )) as ?uritemAire620)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada),"/", spif:encodeURL(?hora), "/velMax1100" )) as ?urivelMax1100)
-bind(iri(concat("http://opendata.euskadi.eus/C040/medicion/", spif:encodeURL(?fechaParseada),"/", spif:encodeURL(?hora), "/velMedia1100" )) as ?urivelMedia1100)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/direccionMedia1100-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?uridirMedia1100)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/humedad620-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?urihumedad620)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/irradia200-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?uriirradia200)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/presion150-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?uripresion150)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/sigDir1100-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?urisigDir1100)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/sigVel1100-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?urisigVel1100)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/temAire610-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?uritemAire620)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/velMax1100-" , spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora))) as ?urivelMax1100)
+bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/elemento/velMedia1100-", spif:encodeURL(?fechaParseada), "-" , spif:encodeURL(?hora) )) as ?urivelMedia1100)
   
-  #Uris elementos generales
-bind(iri(concat("http://opendata.euskadi.eus/medicion/direccionMedia1100" )) as ?uridirMedia1100gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/humedad620" )) as ?urihumedad620gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/irradia200" )) as ?uriirradia200gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/presion150" )) as ?uripresion150gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/sigDir1100" )) as ?urisigDir1100gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/sigVel1100" )) as ?urisigVel1100gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/temAire610" )) as ?uritemAire620gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/velMax1100" )) as ?urivelMax1100gen)
-bind(iri(concat("http://opendata.euskadi.eus/medicion/velMedia1100" )) as ?urivelMedia1100gen)
+  #Uris elementos (predicados) generales 
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/direccionMedia1100")) as ?uridirMedia1100gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/humedad620")) as ?urihumedad620gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/irradia200")) as ?uriirradia200gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/presion150")) as ?uripresion150gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/sigDir1100")) as ?urisigDir1100gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/sigVel1100")) as ?urisigVel1100gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/temAire610")) as ?uritemAire620gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/velMax1100")) as ?urivelMax1100gen)
+bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/medicion/velMedia1100")) as ?urivelMedia1100gen)
 
    #Comentarios elementos  
 bind(STRLANG("Dirección o procedencia media del viento expresada en grados","es") as ?dirMediaComment)
@@ -118,10 +118,10 @@ bind(STRLANG("Temperatura del aire expresada en grados centígrados","es") as ?t
 bind(STRLANG("Racha máxima del viento horizontal expresada en kilómetros por hora","es") as ?velMaxComment)
 bind(STRLANG("Velocidad media del viento expresada en kilómetros por hora","es") as ?velMediaComment)
 
-  #Nombre de la medicion
-  bind(iri(concat("http://opendata.euskadi.eus/calidadDelAire/C040/", spif:encodeURL(?fechaParseada) )) as ?uriEstacion)
+  #Uri general
+  bind(iri(concat("http://opendata.euskadi.eus/recurso/medio-ambiente/calidad-del-aire/observation/C040-", spif:encodeURL(?fechaParseada) )) as ?uriGeneral)
   #Uri medicion
-  bind(iri(concat("http://opendata.euskadi.eus/calidadDelAire/medicion" )) as ?uriMedicion)
+  bind(iri(concat("http://opendata.euskadi.eus/def/medio-ambiente/calidad-del-aire/medicion" )) as ?uriMedicion)
   
   #Uris unidades de medida
 bind(iri("http://ontology.fiesta-iot.eu/ontologyDocs/m3-lite.owl#DegreeCelsius") as ?gradoscentigrados)
@@ -129,6 +129,6 @@ bind(iri("http://dbpedia.org/ontology/percentage") as ?porcentaje)
 bind(iri("http://purl.org/iot/vocab/m3-lite#WattPerMeterSquare") as ?watiosm2)
 bind(iri("http://purl.org/iot/vocab/m3-lite#Millibar") as ?milibar)
 bind(iri("http://purl.org/iot/vocab/m3-lite#KilometerPerHour") as ?kilometrohora)     
-bind(iri("http://opendata.euskadi.eus/estacion/C040") as ?nomEst)                
+bind(iri("http://opendata.euskadi.eus/recurso/medio-ambiente/estacion/C040") as ?nomEst)                
 
     }
