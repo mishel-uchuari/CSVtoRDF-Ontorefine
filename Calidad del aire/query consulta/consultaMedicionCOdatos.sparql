@@ -1,18 +1,16 @@
-#Los distintos valores de CO cuando la humedad es mayor a 91.9 
-PREFIX measure: <http://purl.org/linked-data/sdmx/2009/measure#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX medicion: <http://opendata.euskadi.eus/def/medio-ambiente/medicion/>
-PREFIX calidadAire:<http://opendata.euskadi.eus/def/medio-ambiente/calidad-del-aire/>
+#Las estaciones donde se realizaron, la fecha y el valor de las mediciones de CO
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-SELECT distinct ?medicionCO ?fechaMedicion ?valorCO
-WHERE{
-    ?medicionesEstacion rdf:type medicion:humedad620.
-    ?medicionesEstacion measure:obsValue ?valorHumedad.
-    ?medicionesAvGasteiz dcterms:date ?fechaMedicion.
-    ?medicionesAvGasteiz calidadAire:medicion ?medicionCO.
-    ?medicionCO measure:obsValue ?valorCO.
-    ?medicionCO rdf:type medicion:CO.
-FILTER ( ?valorHumedad > (xsd:double (91.9)))
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX measure: <http://purl.org/linked-data/sdmx/2009/measure#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX calidadDelAire: <http://opendata.euskadi.eus/def/medio-ambiente/calidad-del-aire/>
+PREFIX medicion:<http://opendata.euskadi.eus/def/medio-ambiente/medicion/>
+SELECT ?lugarDondeSeRealizo ?fecha ?valor
+WHERE {
+    ?q calidadDelAire:medicion ?r.
+    ?q geo:location ?lugarDondeSeRealizo.
+    ?q dcterms:date ?fecha.
+    ?r rdf:type medicion:CO.
+    ?r measure:obsValue ?valor .
 }
-ORDER BY DESC(?valorCO)
