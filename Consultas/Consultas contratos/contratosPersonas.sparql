@@ -1,0 +1,16 @@
+#Contratos de personas con su sueldo, el cargo que ocupan y la fecha en la que empezaron a desempeñar el cargo
+PREFIX contsem:<http://contsem.unizar.es/def/sector-publico/pproc#>
+PREFIX opendata-dpto:<http://opendata.euskadi.eus/recurso/sector-publico/departamento/>
+PREFIX schema:<http://schema.org/>
+PREFIX dbpedia:<http://dbpedia.org/ontology/>
+PREFIX purl:<http://purl.org/dc/terms/>
+select distinct ?empleado ?sueldo ?cargo ?fechaInicio ?departamento where { 
+    graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
+    ?contrato contsem:managingDepartment ?departamento.
+    ?contrato schema:employee ?empleado. 
+    ?contrato contsem:ContractEconomicConditions ?sueldo.
+    ?contrato dbpedia:occupation ?cargo.
+    ?contrato contsem:formalizedDate ?fechaInicio.
+    }
+}
+ORDER BY ASC(?sueldo)

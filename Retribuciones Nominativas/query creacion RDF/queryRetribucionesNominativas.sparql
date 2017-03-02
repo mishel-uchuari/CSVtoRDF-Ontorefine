@@ -3,11 +3,11 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX pproc:<http://contsem.unizar.es/def/sector-publico/pproc#>
 PREFIX dbpedia: <http://dbpedia.org/ontology/>
 PREFIX schema:<http://schema.org/>
-
-
+PREFIX dcterms:<http://purl.org/dc/terms/>
+PREFIX frapo:<http://purl.org/cerif/frapo/>
 INSERT{
   graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
-  ?uriGeneral a ?nomina;
+  ?uriGeneral a frapo:EmploymentContract;
   schema:employee ?NomAp;
   dbpedia:occupation ?uriCargoPublico;
   pproc:ContractEconomicConditions ?Retribuciones;
@@ -16,14 +16,16 @@ INSERT{
   ?uriIdDepPred ?Id_Dpto;
   pproc:managingDepartment ?uriDepartamento;
   ?uriIdOrganoPred ?Id_Organo;
-  ?uriOrganoPred ?Id_Organo;
-  ?uriCentroOrganicoPred ?Id_Centro_Organico;
-  ?uriFechaActPred  ?fechaActParseada; 
+  ?uriOrganoPred ?uriOrgano;
+  ?uriIdCentroOrganicoPred ?Id_Centro_Organico;
+  ?uriCentroOrganicoPred  ?uriCentroOrganico;
+  dcterms:modified ?fechaActParseada; 
   }
 }WHERE{
      service <http://lod.eurohelp.es:7200/rdf-bridge/2481831666517> {
-     ?numRow a <urn:Row> ;
+     ?numRow a <urn:Row>;
      <urn:col:NomAp> ?NomAp;
+     <urn:col:empleado> ?empleado;
      <urn:col:CargoPublico> ?CargoPublico;
      <urn:col:CargoPublicoSinGuion> ?cpub;
      <urn:col:Retribuciones> ?Retribuciones;        
@@ -40,11 +42,10 @@ INSERT{
   
   #Uri predicados
   bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/cargo-publico") as ?uriCargoPublicoPred)
-  bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/fecha-actualizacion") as ?uriFechaActPred)
   bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/id-organo") as ?uriIdOrganoPred)
   bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/organo") as ?uriOrganoPred)
-  bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/id-centro-organico") as ?uriCentroOrganicoPred)
-  bind(iri("http://opendata.euskadi.eus/recurso/sector-publico/contrato/nomina") as ?nomina)
+  bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/id-centro-organico") as ?uriIdCentroOrganicoPred)
+  bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/centro-organico") as ?uriCentroOrganicoPred)
 
   #Parseo de las fechas
   bind(spif:parseDate(?FechaInicioRelacion, "dd/MM/yyyy") as ?fechaInicioRelParseada)
@@ -55,8 +56,8 @@ INSERT{
   bind(STRLANG(?cpub,"es") as ?uriCargoPublico)
   bind(STRLANG(?Organo,"es") as ?uriOrgano)
   bind(STRLANG(?CentroOrganico,"es") as ?uriCentroOrganico)
-   #Uri general
-  bind(iri(concat("http://opendata.euskadi.eus/recurso/sector-publico/contrato/", spif:encodeURL(?CargoPublico), "-", spif:encodeURL(?Departamento), "-",  ?fechaActParseada )) as ?uriGeneral)
+  #Uri general
+  bind(iri(concat("http://opendata.euskadi.eus/recurso/sector-publico/contrato/", spif:encodeURL(?CargoPublico), "-", spif:encodeURL(?empleado), "-", spif:encodeURL(?Departamento), "-", spif:encodeURL(?Organo), "-",?fechaActParseada )) as ?uriGeneral)
   #Uri departamento
-  bind(iri(concat("http://opendata.euskadi.eus/recurso/sector-publico/departamento", spif:encodeURL(?Departamento))) as ?uriDepartamento)
+  bind(iri(concat("http://opendata.euskadi.eus/recurso/sector-publico/departamento/", spif:encodeURL(?Departamento))) as ?uriDepartamento)
 }

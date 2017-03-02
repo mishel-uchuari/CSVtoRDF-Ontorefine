@@ -1,0 +1,15 @@
+#Contratos asociados al departamento de "DESARROLLO ECONÓMICO E INFRAESTRUCTURAS" 
+#en los que se cobre mas de 20000€ y el cargo al que corresponde 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX contsem:<http://contsem.unizar.es/def/sector-publico/pproc#>
+PREFIX opendata-dpto:<http://opendata.euskadi.eus/recurso/sector-publico/departamento/>
+PREFIX dbpedia:<http://dbpedia.org/ontology/>
+select distinct * where { 
+    graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
+     ?contrato contsem:managingDepartment opendata-dpto:desarrollo-economico-e-infraestructuras. 
+     ?contrato dbpedia:occupation ?cargo.
+     ?contrato contsem:ContractEconomicConditions ?sueldo.
+    }  
+    FILTER(?sueldo > (xsd:double(20000)))
+}
+ORDER BY DESC(?sueldo)

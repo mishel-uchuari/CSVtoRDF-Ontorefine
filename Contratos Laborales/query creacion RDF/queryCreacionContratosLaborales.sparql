@@ -3,12 +3,11 @@ PREFIX dbpedia: <http://dbpedia.org/ontology/>
 PREFIX pproc:<http://contsem.unizar.es/def/sector-publico/pproc#>
 PREFIX pc: <http://purl.org/procurement/public-contracts#>
 PREFIX frapo:<http://purl.org/cerif/frapo/>
-
-
+PREFIX dcterms:<http://purl.org/dc/terms/>
 INSERT{
   graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
 	?uriGeneral a frapo:EmploymentContract;
-	?uriFechaModificacion ?fechaModificacionParseada;
+	dcterms:modified ?fechaModificacionParseada;
 	?uriFechaDescarga ?fechaDescargaParseada;  
 	?uriCodPuesto ?codPuesto;
 	?uriDotacion ?dotacion;
@@ -22,7 +21,7 @@ INSERT{
 	?uriPerfilLinguistico ?perfilLinguistico;
 	pproc:formalizedDate ?fechaPreceptividadParseada;
 	pproc:ContractEconomicConditions ?importeRetributivo;
-}
+    }
 }WHERE{
    service <http://lod.eurohelp.es:7200/rdf-bridge/2180850619039> {
      ?numRow a <urn:Row>;
@@ -46,11 +45,11 @@ INSERT{
   
     #Uri fecha
   bind(spif:parseDate(?fechaModificacion, "dd/MM/yyyy") as ?fechaModificacionParseada)
-  bind(spif:parseDate(?fechaDescarga, "dd/MM/yyyy") as ?fechaParseada)
-  bind(spif:parseDate(?fechaDePreceptividad, "dd/MM/yyyy") as ?fechaParseada)
+  bind(spif:parseDate(?fechaDescarga, "dd/MM/yyyy") as ?fechaDescargaParseada)
+  bind(spif:parseDate(?fechaDePreceptividad, "dd/MM/yyyy") as ?fechaPreceptividadParseada)
 
   #Uri general
-  bind(iri(concat("http://opendata.euskadi.eus/recurso/sector-publico/contrato/", spif:encodeURL(?dotacion), "-", spif:encodeURL(?centroDestino),"-", spif:encodeURL(?codPuesto), "-", ?fechaParseada )) as ?uriGeneral)
+  bind(iri(concat("http://opendata.euskadi.eus/recurso/sector-publico/contrato/", spif:encodeURL(?dotacion), "-", spif:encodeURL(?centroDestino),"-", spif:encodeURL(?codPuesto), "-", ?fechaModificacionParseada )) as ?uriGeneral)
   #Uris predicados
   bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/fecha-modificacion") as ?uriFechaModificacion)
   bind(iri("http://opendata.euskadi.eus/def/sector-publico/contrato/fecha-descarga") as ?uriFechaDescarga)

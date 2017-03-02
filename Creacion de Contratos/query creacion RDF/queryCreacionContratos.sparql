@@ -4,7 +4,6 @@ PREFIX pc:<http://purl.org/procurement/public-contracts#>
 PREFIX dcterms:<http://purl.org/dc/terms/>
 PREFIX dbpedia:<http://dbpedia.org/ontology/>
 PREFIX frapo:<http://purl.org/cerif/frapo/>
-
 INSERT{
   graph<http://opendata.euskadi.eus/graph/contratosSectorPublico>{
  ?uriGeneral a frapo:EmploymentContract;
